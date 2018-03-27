@@ -112,13 +112,9 @@ export class Insurance {
 		OnymosDigiMe.getDetails(inputObject,
 			function getDetailSuccess (retrievedFileData) {
 				if(retrievedFileData){
-					console.log('hiiii: ',  retrievedFileData)
-										console.log('hiiii: ',  typeof retrievedFileData)
 
-					retrievedFileData.forEach(function(data){
-						console.log('yoo', data.name)
+					JSON.parse(retrievedFileData).forEach(function(data){
 						if (data.name && data.name.indexOf('abuse')){
-							console.log('this user is a B')
 							this.score = 'B'
 						}
 					}.bind(this))
