@@ -10,7 +10,7 @@ import { MyApp } from './app.component';
 import { Home } from '../pages/home/home';
 import { DigiMe } from '../pages/digime/digime';
 import { DigiMeDetails } from '../pages/digime-details/digime-details';
-import { Invite } from '../pages/invite/invite';
+import { Insurance } from '../pages/insurance/insurance';
 // import { InviteDetails } from '../pages/invite-details/invite-details';
 import { Account } from '../pages/account/account';
 import { Login } from '../pages/login/login';
@@ -25,7 +25,7 @@ import { ModalContentPage} from '../pages/chat-details/chat-details';
     DigiMe,
     DigiMeDetails,
     ModalContentPage,
-    Invite,
+    Insurance,
     // InviteDetails,
     Account,
     Login,
@@ -45,7 +45,7 @@ import { ModalContentPage} from '../pages/chat-details/chat-details';
     DigiMe,
     DigiMeDetails,
     ModalContentPage,
-    Invite,
+    Insurance,
     // InviteDetails,
     Account,
     Login

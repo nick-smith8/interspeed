@@ -3,20 +3,25 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { OnymosServices } from '../../services/onymos-services';
 
-import { DigiMeDetails } from '../digime-details/digime-details';
 import { Login } from '../login/login';
+import { DigiMeDetails } from '../digime-details/digime-details';
+
+declare var OnymosContacts:any;
+declare var OnymosContactsConstants:any;
 
 declare var OnymosAccess:any;
 declare var OnymosDigiMe:any;
 
 @Component({
-	selector: 'page-digime',
-	templateUrl: 'digime.html',
+	selector: 'page-insurance',
+	templateUrl: 'insurance.html',
 	providers: [OnymosServices]
 })
-export class DigiMe {
 
+export class Insurance {
+	data : any = [];
 	errorMessage: string = '';
+	test : string = 'init'
 
 	digiMeConnectObj = {
 		serviceGroup: {
@@ -34,34 +39,26 @@ export class DigiMe {
 
 	selectedServiceGroup: string = '';
 
+
+	authDataObject: any;
+	contacts: Array<any> = [];
+	loadingContacts: boolean = false;
+
 	constructor (	public navCtrl: NavController,
-								public onymosServices: OnymosServices,
-
 								private cdRef: ChangeDetectorRef) {
+		this.data = ['blah', 'blah2'];
+		this.test = 'asdfasdf'
+		this.authDataObject = OnymosAccess.getAuth();
 
+		this.requestConsentAccess();
 
 	} /* end constructor */
 
-	ionViewCanEnter(): boolean {
-		if (OnymosAccess.getAuth()) {
-			return true;
-		}
-		else {
-			return true;
-		}
-
-	} /* end ionViewCanEnter */
-
-	toggleGetListSpecDisplay() {
-		this.displayGetListSpec = !this.displayGetListSpec;
-
-	} // end function toggleGetListSpecDisplay
-
-	requestConsentAccess (serviceGroup) {
+	requestConsentAccess () {
 		this.digiMeConnectObj.serviceGroup = {
-			financial: true,
+			financial: false,
 			health: true,
-			social: true
+			social: false
 		};
 
 		this.errorMessage = '';
@@ -70,36 +67,23 @@ export class DigiMe {
 		this.getListQueryComplete = false;
 		this.fileNameArray = [];
 
-		switch (serviceGroup.toLowerCase()) {
-			case 'financial':
-				this.digiMeConnectObj.serviceGroup.financial = true;
-				this.selectedServiceGroup = 'financial';
-				break;
-
-			case 'health':
-				this.digiMeConnectObj.serviceGroup.health = true;
-				this.selectedServiceGroup = 'health';
-				break;
-
-			case 'social':
-				this.digiMeConnectObj.serviceGroup.social = true;
-				this.selectedServiceGroup = 'social';
-				break;
-		}; // end switch serviceGroup.toLowerCase()
+		this.selectedServiceGroup = 'health';
 
 		let that = this;
 
 		OnymosDigiMe.getList(this.digiMeConnectObj,
 			function getListSuccess (fileRecords) {
-				that.fileNameArray = fileRecords;
+				that.test = 'in success '
 
-				that.getListQueryInProgress = false;
-				that.getListQueryComplete = true;
+				fileRecords.forEach((file) => {
+					console.log(this.getFileDetails(file))
+				})
+				console.log('END')
 
-				that.cdRef.detectChanges();
-
-			},
+			}.bind(this),
 			function getListFailure (getListError) {
+				that.test = 'in failure '
+
 				console.log('ERROR : getList failed with error - ' + getListError);
 				that.errorMessage = 'Failed retrieving Data List.';
 
@@ -107,23 +91,27 @@ export class DigiMe {
 				that.getListQueryComplete = true;
 
 				that.cdRef.detectChanges();
-			});
+			}.bind(this));
 
 	} // end function requestConsentAccess
 
 	getFileDetails (fileName) {
 
-		this.navCtrl.push(DigiMeDetails, {
+		let inputObject = {
 			fileName: fileName
-		})
-		.catch(() => {
-
-			// Page requires authentication, re-direct to Login page
-			this.navCtrl.setRoot(Login, {routeToPage: 'DigiMe'});
-
+		};
+		this.test = 'getfile'
+		OnymosDigiMe.getDetails(inputObject,
+			function getDetailSuccess (retrievedFileData) {
+				this.test = 'in succes'
+				console.log('DEBUG : getDetail Output : [' + retrievedFileData + ']');
+				this.data.push(retrievedFileData)
+			}.bind(this),
+			function getDetailFailure (getDetailError) {
+				console.log("DEBUG : JS : [" + getDetailError + "]");
 		});
 
-	} // end function getFileDetails
+	}	// end function getFileDetails
 
 	getFileMetaData (fileName) {
 		var yearMonthString = fileName.split('_')[5].replace('D', '');
@@ -172,4 +160,4 @@ export class DigiMe {
 
 	} // end function getFileMetaData
 
-} /* end export class DigiMe */
+} /* end export class Invite */

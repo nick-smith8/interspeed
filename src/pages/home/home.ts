@@ -5,6 +5,8 @@ import { NavController } from 'ionic-angular';
 
 import { DigiMe } from '../digime/digime';
 
+import { Insurance } from '../insurance/insurance'
+
 @Component({
 	selector: 'page-home',
 	templateUrl: 'home.html'
@@ -27,7 +29,7 @@ export class Home {
 
 	selected(){
 		console.log('in the selected')
-		this.navCtrl.push(DigiMe)
+		this.navCtrl.push(Insurance)
 		// this.nav.setRoot(DigiMe)
 	}
 

@@ -5,7 +5,6 @@ import { Events } from 'ionic-angular';
 
 import { Account } from '../account/account';
 import { Chat } from '../chat/chat';
-import { Invite } from '../invite/invite';
 import { DigiMe } from '../digime/digime';
 
 declare var OnymosAccess:any;
@@ -38,10 +37,6 @@ export class Login {
 				case 'digime':
 					this.navCtrl.setRoot(DigiMe);
 				break;
-
-				case 'invite':
-					this.navCtrl.setRoot(Invite);
-					break;
 
 				default:
 					this.navCtrl.setRoot(Chat);
@@ -84,10 +79,6 @@ export class Login {
 
 						case 'chat':
 							navCtrl.setRoot(Chat);
-							break;
-
-						case 'invite':
-							navCtrl.setRoot(Invite);
 							break;
 
 						default:
