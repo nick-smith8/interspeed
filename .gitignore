@@ -2,6 +2,7 @@
 .sourcemaps/
 config.xml
 debug.keystore
+.DS_Store
 digimekey.p12
 hooks/
 ionic.config.json

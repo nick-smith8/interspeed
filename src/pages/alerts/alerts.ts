@@ -2,24 +2,20 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
-import { DigiMe } from '../digime/digime';
-
 import { Insurance } from '../insurance/insurance'
 
 @Component({
-	selector: 'page-home',
-	templateUrl: 'home.html'
+	selector: 'page-alerts',
+	templateUrl: 'alerts.html'
 })
 
-export class Home {
+export class Alerts {
 	items = []
 
 	constructor (public navCtrl: NavController) {
 	   this.items =[
-	     {'name': 'Insurance'},
-	     {'name': 'Employee Credit Card', component: DigiMe },
-	     {'name': 'Commuter Benefits' },
-	     {'name': 'Retirement'}
+	     'Sign up for Insurance',
+	     'Upload Wearable Data for March Competition',
 	    ];
 	}
 

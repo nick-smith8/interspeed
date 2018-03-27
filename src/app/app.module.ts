@@ -8,6 +8,8 @@ import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { Home } from '../pages/home/home';
+import { Alerts } from '../pages/alerts/alerts';
+import { Offers } from '../pages/offers/offers';
 import { DigiMe } from '../pages/digime/digime';
 import { DigiMeDetails } from '../pages/digime-details/digime-details';
 import { Insurance } from '../pages/insurance/insurance';
@@ -21,6 +23,8 @@ import { ModalContentPage} from '../pages/chat-details/chat-details';
   declarations: [
     MyApp,
     Home,
+    Alerts,
+    Offers,
     // Chat,
     DigiMe,
     DigiMeDetails,
@@ -40,6 +44,8 @@ import { ModalContentPage} from '../pages/chat-details/chat-details';
   entryComponents: [
     MyApp,
     Home,
+    Alerts,
+    Offers,
     // Chat,
     // ChatDetails,
     DigiMe,
