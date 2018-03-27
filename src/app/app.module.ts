@@ -8,12 +8,11 @@ import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { Home } from '../pages/home/home';
-import { Chat } from '../pages/chat/chat';
 import { ChatDetails } from '../pages/chat-details/chat-details';
 import { DigiMe } from '../pages/digime/digime';
 import { DigiMeDetails } from '../pages/digime-details/digime-details';
-import { Invite } from '../pages/invite/invite';
-import { InviteDetails } from '../pages/invite-details/invite-details';
+// import { Invite } from '../pages/invite/invite';
+// import { InviteDetails } from '../pages/invite-details/invite-details';
 import { Account } from '../pages/account/account';
 import { Login } from '../pages/login/login';
 import { AutoResize } from '../directives/auto-resize/auto-resize';
@@ -23,13 +22,13 @@ import { ModalContentPage} from '../pages/chat-details/chat-details';
   declarations: [
     MyApp,
     Home,
-    Chat,
-    ChatDetails,
+    // Chat,
+    // ChatDetails,
     DigiMe,
     DigiMeDetails,
     ModalContentPage,
-    Invite,
-    InviteDetails,
+    // Invite,
+    // InviteDetails,
     Account,
     Login,
     AutoResize
@@ -43,13 +42,13 @@ import { ModalContentPage} from '../pages/chat-details/chat-details';
   entryComponents: [
     MyApp,
     Home,
-    Chat,
-    ChatDetails,
+    // Chat,
+    // ChatDetails,
     DigiMe,
     DigiMeDetails,
     ModalContentPage,
-    Invite,
-    InviteDetails,
+    // Invite,
+    // InviteDetails,
     Account,
     Login
   ],

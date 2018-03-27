@@ -47,7 +47,7 @@ export class DigiMe {
 			return true;
 		}
 		else {
-			return false;
+			return true;
 		}
 
 	} /* end ionViewCanEnter */

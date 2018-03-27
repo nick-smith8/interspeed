@@ -40,7 +40,7 @@ export class DigiMeDetails {
 			return true;
 		}
 		else {
-			return false;
+			return true;
 		}
 
 	} /* end ionViewCanEnter */

@@ -1,4 +1,13 @@
-<ion-menu [content]="content">
+<h1>test</h1>
+<ion-tabs>
+  <ion-tab *ngFor="let p of pages" [tabTitle]="p.title" [root]="p.component" ></ion-tab>
+  <!-- <ion-tab tabTitle="Home" [root]="rootPage" ></ion-tab> -->
+  <!-- <ion-tab tabTitle="DigiMe" [root]="DigiMe" ></ion-tab> -->
+  <!-- <ion-tab [root]="tab3Root"></ion-tab> -->
+</ion-tabs>
+
+
+<!-- <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar color="dark">
       <ion-title>Menu</ion-title>
@@ -17,9 +26,13 @@
         Logout
       </button>
     </ion-list>
+
   </ion-content>
 
 </ion-menu>
 
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav> -->
+
+
+
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

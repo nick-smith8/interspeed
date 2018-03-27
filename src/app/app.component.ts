@@ -5,9 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Home } from '../pages/home/home';
 import { Account } from '../pages/account/account';
-import { Chat } from '../pages/chat/chat';
 import { DigiMe } from '../pages/digime/digime';
-import { Invite } from '../pages/invite/invite';
 import { Login } from '../pages/login/login';
 
 declare var OnymosAccess:any;
@@ -24,6 +22,7 @@ export class MyApp {
 
   rootPage: any = Home;
   authenticated: boolean;
+  DigiMe: any = DigiMe;
 
   pages: Array<{title: string, component: any}>;
 
@@ -32,11 +31,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home',    component: Home },
-      { title: 'Chat',    component: Chat },
-      { title: 'DigiMe',  component: DigiMe },
-      { title: 'Invite',  component: Invite },
-      { title: 'Account', component: Account }
+      { title: 'Home',    component: DigiMe }
+      // { title: 'DigiMe',  component: DigiMe },
+      // { title: 'Account', component: Account }
     ];
 
     this.authenticated = false;
