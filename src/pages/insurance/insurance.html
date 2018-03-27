@@ -9,11 +9,26 @@
 	</ion-navbar>
 </ion-header>
 
-<h2> ----- </h2>
-<p>{{test}}</p>
+<h1> -----</h1>
+<br>
+<br>
+<h1 > Health Score: {{score}}</h1>	
 
-<h2>------</h2>
+<h4> Recommended insurances based off digi.me data: </h4>
 
- <p ng-repeat="d in data">
-      Hello {{d}}!
-</p>
+<ion-list inset *ngIf="insuranceReady > 0">
+	<ion-item *ngFor="let i of insuranceArray" (click)="showInsuranceQuote(i);">
+			<p>
+				{{i.name}}
+			</p>
+	</ion-item>
+</ion-list>
+
+<div *ngIf="showQuote > 0" >
+	<div class='np'>New Price: {{insuranceSelected.newPrice}}</div>
+	<div class='op'>Old Price: {{insuranceSelected.oldPrice}}</div>
+	<div class='savings'>Savings: {{insuranceSelected.savings}}</div>
+</div>
+
+
+

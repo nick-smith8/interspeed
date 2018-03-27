@@ -20,9 +20,14 @@ declare var OnymosDigiMe:any;
 
 export class Insurance {
 	data : any = [];
+	insuranceArray : any = [];
 	errorMessage: string = '';
 	test : string = 'init'
-
+	insuranceReady : number = 0;
+	quote : any = {};
+	showQuote : number = 0;
+	score : string = ''
+	insuranceSelected : any ={}
 	digiMeConnectObj = {
 		serviceGroup: {
 			financial: true,
@@ -49,6 +54,16 @@ export class Insurance {
 		this.data = ['blah', 'blah2'];
 		this.test = 'asdfasdf'
 		this.authDataObject = OnymosAccess.getAuth();
+		this.insuranceReady = 0;
+		this.showQuote =0;
+		this.insuranceSelected = {}
+		this.insuranceArray = [
+		{name:'Aetna PPO 30', oldPrice:'260', newPrice:'180', savings:'80'},
+		{name:'Aetna PPO 45', oldPrice:'500', newPrice:'300', savings:'200'},
+		{name:'Aetna PPO 60', oldPrice:'630', newPrice:'540', savings:'90'},
+		 ];
+		this.score = 'A'
+		this.quote = {}
 
 		this.requestConsentAccess();
 
@@ -73,17 +88,16 @@ export class Insurance {
 
 		OnymosDigiMe.getList(this.digiMeConnectObj,
 			function getListSuccess (fileRecords) {
-				that.test = 'in success '
 
 				fileRecords.forEach((file) => {
-					console.log(this.getFileDetails(file))
+					// only get medical records
+					if ( file.indexOf('18_2') > -1){
+						this.getFileDetails(file)
+						this.insuranceReady = 1;
+					}
 				})
-				console.log('END')
-
 			}.bind(this),
 			function getListFailure (getListError) {
-				that.test = 'in failure '
-
 				console.log('ERROR : getList failed with error - ' + getListError);
 				that.errorMessage = 'Failed retrieving Data List.';
 
@@ -100,12 +114,21 @@ export class Insurance {
 		let inputObject = {
 			fileName: fileName
 		};
-		this.test = 'getfile'
+
 		OnymosDigiMe.getDetails(inputObject,
 			function getDetailSuccess (retrievedFileData) {
-				this.test = 'in succes'
-				console.log('DEBUG : getDetail Output : [' + retrievedFileData + ']');
-				this.data.push(retrievedFileData)
+				if(retrievedFileData){
+					console.log('hiiii: ',  retrievedFileData)
+										console.log('hiiii: ',  typeof retrievedFileData)
+
+					retrievedFileData.forEach(function(data){
+						console.log('yoo', data.name)
+						if (data.name && data.name.indexOf('abuse')){
+							console.log('this user is a B')
+							this.score = 'B'
+						}
+					}.bind(this))
+				}
 			}.bind(this),
 			function getDetailFailure (getDetailError) {
 				console.log("DEBUG : JS : [" + getDetailError + "]");
@@ -159,5 +182,9 @@ export class Insurance {
 		} // end switch month
 
 	} // end function getFileMetaData
-
+	showInsuranceQuote(insurance){
+		console.log('in the showing of quotes')
+		this.showQuote = 1;
+		this.insuranceSelected = insurance;
+	}
 } /* end export class Invite */

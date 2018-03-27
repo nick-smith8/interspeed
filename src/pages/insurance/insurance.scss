@@ -1,7 +1,22 @@
 page-insurance {
+	h4, h1{
+		text-align: center;
+	}
 
+	.np {
+	float:left
+	}
+	.op {
+	float:right
+	}
+	p {
+		text-align:center;
+		font-weight:500;
+
+	}
+	background-color: white!important;
 	.disabled {
-		color:										color($colors, medium);
+		color: color($colors, medium);
 
 	} /* end disabled */
 
