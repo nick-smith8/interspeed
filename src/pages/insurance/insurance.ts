@@ -89,7 +89,7 @@ export class Insurance {
 						this.getFileDetails(file)
 					}
 				})
-				this.insuranceReady = 1;
+
 			}.bind(this),
 			function getListFailure (getListError) {
 				console.log('ERROR : getList failed with error - ' + getListError);
@@ -116,6 +116,7 @@ export class Insurance {
 					JSON.parse(retrievedFileData).forEach(function(data){
 						if (data.name && data.name.indexOf('abuse')){
 							this.score = 'B'
+							this.insuranceReady = 1;
 						}
 					}.bind(this))
 				}
