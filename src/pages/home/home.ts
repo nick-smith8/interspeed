@@ -13,17 +13,14 @@ import { Insurance } from '../insurance/insurance'
 })
 
 export class Home {
-	items= [
-		'Benefits'
-	]
+	items = []
 
 	constructor (public navCtrl: NavController) {
 	   this.items =[
 	     'Insurance',
-	     'Pay',
 	     'Employee Credit Card',
-	     'Retirement',
-	     'Social'
+	     'Commuter Benefits',
+	     'Retirement'
 	    ];
 	}
 
