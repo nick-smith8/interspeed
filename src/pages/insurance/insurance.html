@@ -13,10 +13,12 @@
 <br>
 <br>
 <h1 > Health Score: {{score}}</h1>	
+<br>
+<br>
 
-<h4> Recommended insurances based off digi.me data: </h4>
+<h3> Recommended insurances: </h3>
 
-<ion-list inset *ngIf="showQuote > 0">
+<ion-list inset *ngIf="insuranceReady > 0">
 	<ion-item *ngFor="let i of insuranceArray" (click)="showInsuranceQuote(i);">
 			<p>
 				{{i.name}}
