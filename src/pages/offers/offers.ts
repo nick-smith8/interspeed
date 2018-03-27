@@ -20,7 +20,6 @@ export class Offers {
 	selected(){
 		console.log('in the selected')
 		this.navCtrl.push(Insurance)
-		// this.nav.setRoot(DigiMe)
 	}
 
 }
