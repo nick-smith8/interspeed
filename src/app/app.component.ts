@@ -7,6 +7,8 @@ import { Home } from '../pages/home/home';
 import { Account } from '../pages/account/account';
 import { DigiMe } from '../pages/digime/digime';
 import { Login } from '../pages/login/login';
+import { Alerts } from '../pages/alerts/alerts';
+import { Offers } from '../pages/offers/offers';
 
 declare var OnymosAccess:any;
 declare var OnymosChat:any;
@@ -32,8 +34,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Benefits', component: Home, icon: 'heart' },
-      { title: 'Alerts',  component: DigiMe, icon: 'alert' },
-      { title: 'Offers', component: Account, icon: 'cash' },
+      { title: 'Alerts',  component: Alerts, icon: 'alert' },
+      { title: 'Offers', component: Offers, icon: 'cash' },
       { title: 'Settings', component: Account, icon: 'construct' }
     ];
 

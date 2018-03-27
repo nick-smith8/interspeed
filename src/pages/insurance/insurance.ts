@@ -3,12 +3,6 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { OnymosServices } from '../../services/onymos-services';
 
-import { Login } from '../login/login';
-import { DigiMeDetails } from '../digime-details/digime-details';
-
-declare var OnymosContacts:any;
-declare var OnymosContactsConstants:any;
-
 declare var OnymosAccess:any;
 declare var OnymosDigiMe:any;
 
