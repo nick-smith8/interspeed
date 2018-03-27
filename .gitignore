@@ -1,0 +1,17 @@
+
+.sourcemaps/
+config.xml
+debug.keystore
+digimekey.p12
+hooks/
+ionic.config.json
+node_modules/
+onymos_components/
+package.json
+platforms/
+plugins/
+res/
+resources/
+tsconfig.json
+tslint.json
+www/
