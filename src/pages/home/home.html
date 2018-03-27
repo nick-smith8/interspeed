@@ -9,6 +9,7 @@
 <ion-list inset>
   <div class="card" *ngFor="let item of items" (click)="selected()">
     <h4>{{ item.name }}</h4>
+    <p>{{ item.text }}</p>
   </div>  
 </ion-list>
 

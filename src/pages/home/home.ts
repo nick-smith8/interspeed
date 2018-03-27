@@ -17,8 +17,8 @@ export class Home {
 	constructor (public navCtrl: NavController) {
 	   this.items =[
 	     {'name': 'Insurance'},
-	     {'name': 'Employee Credit Card', component: DigiMe },
-	     {'name': 'Commuter Benefits' },
+	     {'name': 'Employee Credit Card', component: DigiMe, text: 'Pick between Amex Gold and Amex Delta -- use digi.me data to determine which is better for you' },
+	     {'name': 'Commuter Benefits', text: 'sign up today to recieve before-tax treatment on all public transport' },
 	     {'name': 'Retirement'}
 	    ];
 	}
