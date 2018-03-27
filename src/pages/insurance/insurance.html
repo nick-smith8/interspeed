@@ -17,7 +17,7 @@
 
 <h1 *ngIf="insuranceReady > 0" > Health Score: {{score}}</h1>
 
-<h4 *ngIf="insuranceReady > 0" > Recommended insurances based off digi.me data: </h4>
+<h3 *ngIf="insuranceReady > 0" > Recommended insurances: </h3>
 
 <ion-list inset *ngIf="insuranceReady > 0">
 	<ion-item *ngFor="let i of insuranceArray" (click)="showInsuranceQuote(i);">
