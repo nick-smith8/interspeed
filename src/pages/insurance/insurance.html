@@ -13,8 +13,10 @@
 <br>
 <br>
 <h1> Health Score: {{score}}</h1>
+<br>
+<br>
 
-<h3> Recommended insurances: </h3>
+<h1> Recommended insurances: </h1>
 
 <ion-list inset *ngIf="insuranceReady > 0">
 	<ion-item *ngFor="let i of insuranceArray" (click)="showInsuranceQuote(i);">
@@ -25,9 +27,11 @@
 </ion-list>
 
 <div *ngIf="showQuote > 0" >
-	<div class='np'>New Price: {{insuranceSelected.newPrice}}</div>
-	<div class='op'>Old Price: {{insuranceSelected.oldPrice}}</div>
-	<div class='savings'>Savings: {{insuranceSelected.savings}}</div>
+	<div class='np'>New Price<hr style='display:inline-block; width:100px;' /> {{insuranceSelected.newPrice}}</div>
+	<br>
+	<div class='op'>Old Price<hr style='display:inline-block; width:100px;' /> {{insuranceSelected.oldPrice}}</div>
+	<br>
+	<div class='savings'>Savings<hr style='display:inline-block; width:100px;' /> {{insuranceSelected.savings}}</div>
 </div>
 
 

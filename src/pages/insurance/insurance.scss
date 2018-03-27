@@ -2,12 +2,16 @@ page-insurance {
 	h4, h1, h3{
 		text-align: center;
 	}
-
+	hr {
+		background-color:gray;
+		margin-bottom:0px;
+	}
 	.np {
-	float:left
+
+	/*float:left*/
 	}
 	.op {
-	float:right
+	/*float:right*/
 	}
 	p {
 		text-align:center;
