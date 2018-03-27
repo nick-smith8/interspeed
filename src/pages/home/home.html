@@ -1,13 +1,15 @@
-<ion-header>
+<ion-header class='header'>
 	<ion-navbar>
-		<button ion-button menuToggle>
-			<ion-icon name="menu"></ion-icon>
-		</button>
-		<ion-title>Onymos Fabric - Ionic</ion-title>
+		<ion-title>Benefits</ion-title>
 	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
-	<h4 text-align='center'>Inter Speed!</h4>
+
+<ion-list inset>
+  <button class='listItem' ion-item *ngFor="let item of items" (click)="selected()">
+    {{ item }}
+  </button>  
+</ion-list>
 
 </ion-content>

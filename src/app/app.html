@@ -1,6 +1,6 @@
 <h1>test</h1>
-<ion-tabs>
-  <ion-tab *ngFor="let p of pages" [tabTitle]="p.title" [root]="p.component" ></ion-tab>
+<ion-tabs class='bottomTabs'>
+  <ion-tab *ngFor="let p of pages" [tabTitle]="p.title" [tabIcon]="p.icon" [root]="p.component" ></ion-tab>
   <!-- <ion-tab tabTitle="Home" [root]="rootPage" ></ion-tab> -->
   <!-- <ion-tab tabTitle="DigiMe" [root]="DigiMe" ></ion-tab> -->
   <!-- <ion-tab [root]="tab3Root"></ion-tab> -->

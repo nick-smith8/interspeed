@@ -6,7 +6,6 @@ import { OnymosServices } from '../../services/onymos-services';
 import { Home } from '../home/home';
 
 declare var OnymosAccess:any;
-declare var OnymosContacts:any;
 
 @Component({
 	selector: 'page-account',

@@ -24,16 +24,17 @@ export class MyApp {
   authenticated: boolean;
   DigiMe: any = DigiMe;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: any}>;
 
   constructor(public events: Events, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private cdRef: ChangeDetectorRef) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home',    component: Home },
-      { title: 'DigiMe',  component: DigiMe },
-      { title: 'Account', component: Account }
+      { title: 'Benefits', component: Home, icon: 'heart' },
+      { title: 'Alerts',  component: DigiMe, icon: 'alert' },
+      { title: 'Offers', component: Account, icon: 'cash' },
+      { title: 'Settings', component: Account, icon: 'construct' }
     ];
 
     this.authenticated = false;
