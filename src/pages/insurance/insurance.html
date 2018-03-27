@@ -12,7 +12,6 @@
 <h1> -----</h1>
 <br>
 <br>
-<h1> Recommended insurances: </h1>
 <h1 *ngIf="insuranceReady < 1" > Waiting on digi.me data...  </h1> 
 
 <h1 *ngIf="insuranceReady > 0" > Health Score: {{score}}</h1>
@@ -27,12 +26,12 @@
 	</ion-item>
 </ion-list>
 
-<div *ngIf="showQuote > 0" >
-	<div class='np'>New Price<hr style='display:inline-block; width:100px;' /> {{insuranceSelected.newPrice}}</div>
+<div class="quotes" *ngIf="showQuote > 0" >
+	<div class='np'>New Price<hr style='display:inline-block; width:200px;' /> ${{insuranceSelected.newPrice}}</div>
 	<br>
-	<div class='op'>Old Price<hr style='display:inline-block; width:100px;' /> {{insuranceSelected.oldPrice}}</div>
+	<div class='op'>Old Price<hr style='display:inline-block; width:200px;' /> ${{insuranceSelected.oldPrice}}</div>
 	<br>
-	<div class='savings'>Savings<hr style='display:inline-block; width:100px;' /> {{insuranceSelected.savings}}</div>
+	<div class='savings'>Savings<hr style='display:inline-block; width:200px;' /> <b color="green">${{insuranceSelected.savings}}</b></div>
 </div>
 
 
