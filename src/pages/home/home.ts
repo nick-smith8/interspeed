@@ -11,22 +11,24 @@ import { DigiMe } from '../digime/digime';
 })
 
 export class Home {
-  	@ViewChild(Nav) nav: Nav;
-
 	items= [
 		'Benefits'
 	]
 
 	constructor (public navCtrl: NavController) {
 	   this.items =[
-	     'Benefits'
+	     'Insurance',
+	     'Pay',
+	     'Employee Credit Card',
+	     'Retirement',
+	     'Social'
 	    ];
 	}
 
 	selected(){
 		console.log('in the selected')
-
-		this.nav.setRoot(DigiMe)
+		this.navCtrl.push(DigiMe)
+		// this.nav.setRoot(DigiMe)
 	}
 
 }
