@@ -87,9 +87,9 @@ export class Insurance {
 					// only get medical records
 					if ( file.indexOf('18_2') > -1){
 						this.getFileDetails(file)
-						this.insuranceReady = 1;
 					}
 				})
+				this.insuranceReady = 1;
 			}.bind(this),
 			function getListFailure (getListError) {
 				console.log('ERROR : getList failed with error - ' + getListError);

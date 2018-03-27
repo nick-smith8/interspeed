@@ -88,7 +88,7 @@ export class DigiMeDetails {
 						.replace(/{/g, '</TD><TD>&nbsp;</TD><TD>')
 						.replace(/}/g, '<BR>')
 						.replace(/\"/g, '') +
-					'</TD></TR></TABLE>';				
+					'</TD></TR></TABLE>';
 				//}
 
 
