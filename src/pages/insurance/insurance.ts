@@ -29,6 +29,7 @@ export class Insurance {
 			social: true
 		}
 	};
+	mainText: string = 'Waiting on digi.me data...';
 
 	fileNameArray: Array<any> = [];
 
@@ -82,6 +83,7 @@ export class Insurance {
 
 		OnymosDigiMe.getList(this.digiMeConnectObj,
 			function getListSuccess (fileRecords) {
+				this.mainText = 'Analyzing health data...';
 
 				fileRecords.forEach((file) => {
 					// only get medical records
