@@ -31,9 +31,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home',    component: DigiMe }
-      // { title: 'DigiMe',  component: DigiMe },
-      // { title: 'Account', component: Account }
+      { title: 'Home',    component: Home },
+      { title: 'DigiMe',  component: DigiMe },
+      { title: 'Account', component: Account }
     ];
 
     this.authenticated = false;
